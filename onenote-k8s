@@ -1,0 +1,8 @@
+* cluster 생성
+gcloud container clusters create clustername --num-nodes=3
+
+* cluster 삭제
+gcloud container clusters list 
+gcloud config set compute/zone us-central1-a 
+gcloud container clusters delete lab03 
+
