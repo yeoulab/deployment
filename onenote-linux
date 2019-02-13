@@ -1,0 +1,3 @@
+rm 파일명 : 파일삭제
+fine ./ -name aaa.txt
+grep -r "문자열" ./*
