@@ -1,0 +1,47 @@
+* 도커 런
+docker run --name mongodb -v /data/db:/data/db -d mongo
+docker run -it --entrypoint 'mongod --bind_ip_all' --hostname MONGODB --name=MONGODB --net=bridge --expose=27017 mongo
+
+docker run -it --entrypoint 'mongod --bind_ip_all' -v /data/db:/data/db --hostname MONGODB --name=mongodb --net=bridge --expose=27017 mongo
+
+마지막
+docker run --name mongodb -d -v /data/db:/data/db --hostname MONGODB --net=bridge --expose=27017 mongo mongod --bind_ip_all
+
+마지막
+docker run --name mongodb -d -v /data/db:/data/db --hostname MONGODB --net=bridge -p 27017:27017 mongo mongod --bind_ip_all
+
+
+mongo 를 link 한 node docker container run 
+docker run --name ubuntu-nodejs --link mongodb:mongodb -it ubuntu:18.04 /bin/bash
+
+cat /etc/hosts 를 하면 볼 수 있다.
+
+apt-get update
+apt-get install nodejs -y
+apt-get install npm -y
+apt-get install git -y
+git clone https://github.com/yeoulab/server.git
+cd server
+npm install ( 현재 github 에는 pm2 가 없어서, pm2  깔고 다시 npm install 해야함 )
+
+config.json 변경
+
+* clinet 실행
+mongo.exe 를 실행하면 바로 localhost 로 접속한다.
+
+C:\Program Files\MongoDB\Server\4.0\bin\
+C:\Program Files\MongoDB\Server\4.0\bin\mongod
+C:\Program Files\MongoDB\Server\4.0\bin\mongo
+
+
+* 명령어
+데이터베이스 접속 : use 데이터베이스명
+콜렉션 리스트 조회 : show collections
+
+데이터베이스.콜렉션.find()
+데이터베이스.컬렉션.remove({userId:"aaa"})
+"5bfe39f95c4d9e18a458752d"
+
+
+
+
