@@ -1,0 +1,8 @@
+* 참조파일
+https://github.com/circleci/circleci-images/blob/2b8e03e0f9e447e6fa7fd072ab620864f145afdf/.circleci/config.yml
+
+도커 file 을 build 후 test 후 배포까지
+https://circleci.com/docs/2.0/ecs-ecr/#build-test-and-archive-image
+
+
+*
